@@ -2,7 +2,7 @@ def fetch_html(url, timeout=10):
     """
     Fetches the HTML content of a given URL.
 
-    Args:
+    Parameters:
         url (str): The URL of the webpage to fetch.
         timeout (int, optional): The maximum time to wait for a response, in seconds. Defaults to 10 seconds.
 
