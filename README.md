@@ -1,6 +1,6 @@
 # 524_group29_webscraping
 
-A simple Python toolkit for web scraping
+A Python package for simplified web scraping functionality for data scientists new to web scraping.
 
 ## Installation
 
@@ -8,18 +8,46 @@ A simple Python toolkit for web scraping
 $ pip install 524_group29_webscraping
 ```
 
-## Usage
+## Functions
 
-- TODO
+- `fetch_html(url)`: Retrieves the raw HTML content from the specified URL, handling HTTP requests and potential errors.
+- `parse_content(html, selector)`: Parses the provided HTML content using CSS selectors or XPath to extract targeted data.
+- `save_data(data, format, destination)`: Saves the extracted data into the desired format (e.g., TXT, CSV, JSON) at the specified destination path.
+
+## Python Ecosystem
+
+While libraries like [`BeautifulSoup`](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) 
+and [`Scrapy`](https://scrapy.org/) offer comprehensive web scraping capabilities,
+*524_group29_webscraping* aims to provide a more streamlined and beginner-friendly approach. 
+By focusing on three core functions, it abstracts 
+the complexities involved in web scraping, making 
+it accessible for quick tasks and educational purposes.
+
+**Similar Packages:**
+
+- [`webscraping`](https://github.com/richardpenman/webscraping): Provides web scraping functions but contains a rich set of functionality that is beyond beginner level.
+- [`webscraping_tools`](https://github.com/Jack-Tilley/webscraping_tools): Offers similar functionalities and many more that in our opinion, places it in the intermediate level.
+
+*524_group29_webscraping* differentiates itself by offering a simple set of functions 
+that do the job for simple, beginner level needs.
+
+
+## Contributors
+
+- Lixuan Lin
+- Hui Tang
+- Sienko Ikhabi
 
 ## Contributing
 
-Interested in contributing? Check out the contributing guidelines. Please note that this project is released with a Code of Conduct. By contributing to this project, you agree to abide by its terms.
+Interested in contributing? Check out the [contributing](CONTRIBUTING.md) guidelines. 
+
+Please note that this project is released with a [Code of Conduct](CONDUCT.md). By contributing to this project, you agree to abide by the specified terms.
 
 ## License
 
-`524_group29_webscraping` was created by group29. It is licensed under the terms of the MIT license.
+Package `524_group29_webscraping` was created by Lixuan Lin, Hui Tang and Sienko Ikhabi for the Master of Data Science, University of British Columbia. It is licensed under the terms of the MIT license.
 
 ## Credits
 
-`524_group29_webscraping` was created with [`cookiecutter`](https://cookiecutter.readthedocs.io/en/latest/) and the `py-pkgs-cookiecutter` [template](https://github.com/py-pkgs/py-pkgs-cookiecutter).
+This project was created with [`cookiecutter`](https://cookiecutter.readthedocs.io/en/latest/) from the `py-pkgs-cookiecutter` [template](https://github.com/py-pkgs/py-pkgs-cookiecutter).
