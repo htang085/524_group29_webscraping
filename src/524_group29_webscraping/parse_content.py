@@ -12,5 +12,23 @@ def parse_content(html, selector, selector_type='css'):
 
     Raises:
         ValueError: If the selector_type is unsupported or parsing fails.
+
+    Example:
+        # Sample HTML content
+        html = '''
+        <html>
+            <body>
+                <div class="item">alfa</div>
+                <div class="item">bravo</div>
+                <div class="item">charlie</div>
+            </body>
+        </html>
+        '''
+
+        # Using CSS selector
+        parse_content(html, ".item")  # Returns: ['alpha', 'bravo', 'charlie']
+
+        # Using XPath selector
+        parse_content(html, "//div[@class='item']", selector_type='xpath')  # Returns: ['alpha', 'bravo', 'charlie']
     """
     pass
