@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "524_group29_webscraping"
+name = "dsci524_group29_webscraping"
 version = "0.1.0"
 description = "A simple Python toolkit for web scraping"
 authors = ["group29"]

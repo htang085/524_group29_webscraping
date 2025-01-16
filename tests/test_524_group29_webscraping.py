@@ -1,1 +1,1 @@
-from 524_group29_webscraping import 524_group29_webscraping
+#from 524_group29_webscraping import 524_group29_webscraping
