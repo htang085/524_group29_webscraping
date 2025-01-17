@@ -1,5 +1,5 @@
 from lxml import etree
-from io import StringIO
+from lxml.html import fromstring
 
 def parse_content(html, selector, selector_type = 'css'):
     """
@@ -36,17 +36,27 @@ def parse_content(html, selector, selector_type = 'css'):
     """
     # check that selector_type in [xpath, css]
     if not selector_type.lower() in ['xpath', 'css']:
-        raise ValueError("Only CSS/XPath selectors are supported")
-    # first, we try to read the value
-    try:
-        temp_file = StringIO(html)
-        value_tree = etree.parse(temp_file)
-    except:
-        raise ValueError("Unable to parse the content provided")
-    
-    # parsed OK
-    if(selector_type == 'xpath'):
-        parsed_value = value_tree.xpath(selector)
+        raise ValueError("Only CSS/XPath selectors are supported")    
+    # process the value
+    elif(selector_type.lower() == 'xpath'):
+        # first, we try to read the value 
+        try:
+            value_tree = etree.fromstring(html)
+        except:
+            raise ValueError("Unable to parse the content provided for XPath")
+        # parsed OK
+        temp_result = value_tree.xpath(selector)
+        parsed_value = [t.strip() for t in temp_result if len(t.strip()) > 0]
     else:
-        parsed_value = value_tree.xpath(selector)
+        try:
+            # for CSS, we must parse the string as using etree first
+            # because `fromstring` is lenient
+            value_tree = etree.fromstring(html)
+            # now parse as HTML
+            value_tree = fromstring(html)
+        except:
+            raise ValueError("Unable to parse the content provided for CSS")
+        # parse as HTML, extract the CSS
+        temp_result = value_tree.cssselect(selector)
+        parsed_value = [t.text_content() for t in temp_result if len(t.text_content().strip()) > 0]
     return parsed_value
