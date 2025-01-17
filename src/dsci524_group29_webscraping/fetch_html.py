@@ -1,3 +1,7 @@
+# fetch_html.py
+# author: Lixuan Lin
+# date: 2025-01-16
+
 import requests
 from requests.exceptions import RequestException
 
