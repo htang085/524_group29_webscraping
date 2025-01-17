@@ -1,3 +1,7 @@
+# parse_content.py
+# author: Sienko Ikhabi
+# date: 2025-01-16
+
 from lxml import etree
 from lxml.html import fromstring
 
@@ -8,7 +12,7 @@ def parse_content(html, selector, selector_type = 'css'):
     Parameters:
         html (str): The raw HTML content.
         selector (str): The CSS selector or XPath expression to target elements.
-        selector_type (str): The type of selector ('css' or 'xpath').
+        selector_type (str): The type of selector ('css' or 'xpath'). Case-insensitive
 
     Returns:
         list: A list of extracted data elements.
