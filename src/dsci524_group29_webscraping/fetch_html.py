@@ -1,3 +1,10 @@
+# fetch_html.py
+# author: Lixuan Lin
+# date: 2025-01-16
+
+import requests
+from requests.exceptions import RequestException
+
 def fetch_html(url, timeout=10):
     """
     Fetches the HTML content of a given URL.
@@ -24,4 +31,11 @@ def fetch_html(url, timeout=10):
         - This function uses the `requests` library to perform an HTTP GET request.
         - Ensure the `requests` library is installed before using this function.
     """
-
+    try:
+        response = requests.get(url, timeout=timeout)
+        response.raise_for_status()
+        return response.text
+    except requests.exceptions.Timeout:
+        raise 
+    except RequestException as e:
+        raise ValueError(f"Failed to fetch HTML from {url}: {e}")
