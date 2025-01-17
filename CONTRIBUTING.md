@@ -40,10 +40,10 @@ If you are proposing a feature:
 
 ## Get Started!
 
-Ready to contribute? Here's how to set up `524_group29_webscraping` for local development.
+Ready to contribute? Here's how to set up `dsci524_group29_webscraping` for local development.
 
-1. Download a copy of `524_group29_webscraping` locally.
-2. Install `524_group29_webscraping` using `poetry`:
+1. Download a copy of `dsci524_group29_webscraping` locally.
+2. Install `dsci524_group29_webscraping` using `poetry`:
 
     ```console
     $ poetry install
@@ -69,5 +69,5 @@ Before you submit a pull request, check that it meets these guidelines:
 
 ## Code of Conduct
 
-Please note that the `524_group29_webscraping` project is released with a
+Please note that the `dsci524_group29_webscraping` project is released with a
 Code of Conduct. By contributing to this project you agree to abide by its terms.
