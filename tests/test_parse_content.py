@@ -6,11 +6,19 @@ import pytest
 from dsci524_group29_webscraping.parse_content import parse_content
 
 def test_parse_simple_xpath():
+    """
+    Test using XPath on a simple HTML fragment.
+    Ensures that function can retrieve all text from an HTML code block using XPath
+    """
     actual = parse_content('<p>Hello! World.</p>', '//text()', 'XPath')
     expected = ['Hello! World.']
     assert actual == expected, "Basic test with simple XPath <p> block failed."
 
 def test_parse_simple_css():
+    """
+    Test using CSS on a simple HTML fragment.
+    Ensures that function can retrieve specific tag from HTML code block using CSS
+    """
     actual = parse_content('<p class="test">ptest</p>', ".test", 'CSS')
     expected = ['ptest']
     assert actual == expected, "Basic test with simple CSS <p> block failed."
