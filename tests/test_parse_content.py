@@ -10,8 +10,8 @@ def test_parse_simple_xpath():
     Test using XPath on a simple HTML fragment.
     Ensures that function can retrieve all text from an HTML code block using XPath.
     """
-    actual = parse_content('<p>Hello! World.</p>', '//text()', 'XPath')
-    expected = ['Hello! World.']
+    actual = parse_content('<p>Hello! World.</p>', '//p', 'XPath')
+    expected = [{'value': 'Hello! World.'}]
     assert actual == expected, "Basic test with simple XPath <p> block failed."
 
 def test_parse_simple_css():
@@ -20,7 +20,7 @@ def test_parse_simple_css():
     Ensures that function can retrieve specific tag from HTML code block using CSS.
     """
     actual = parse_content('<p class="test">ptest</p>', ".test", 'CSS')
-    expected = ['ptest']
+    expected = [{'value': 'ptest'}]
     assert actual == expected, "Basic test with simple CSS <p> block failed."
 
 def test_parse_invalid_selector():
@@ -28,24 +28,24 @@ def test_parse_invalid_selector():
     Test that function gracefully handles invalid selector_type parameter.
     Check the function raises a ValueError when selector_type is not {'CSS', 'XPath'}
     """
-    with pytest.raises(ValueError, match = "Only CSS/XPath selectors are supported"):
-        parse_content('<p>test</p>', '//text()', 'MyPath')
+    with pytest.raises(ValueError, match = "Invalid selector_type 'MyPath'. Only CSS/XPath selectors are supported."):
+        parse_content('<p>test</p>', '//p', 'MyPath')
 
-def test_parse_invalid_xml():
+def test_parse_invalid_xpath():
     """
     Test that function gracefully handles invalid HTML string value (XPath branch).
     Check that ValueError is raised when html argument passed is not valid HTML for XPath case
     """
-    with pytest.raises(ValueError, match = "Unable to parse the content provided for XPath"):
-        parse_content('<body><h1>no closing tag<h1>', '//text()', 'XPath')
+    with pytest.raises(ValueError, match = "Unable to parse the html_content provided."):
+        parse_content('<body ><h1 />Testing Xpath<h1>', '\\h1', 'XPath')
 
 def test_parse_invalid_css():
     """
     Test that function gracefully handles invalid HTML string value (CSS branch).
     Check that ValueError is raised when html argument passed is not valid HTML for CSS case
     """
-    with pytest.raises(ValueError, match = "Unable to parse the content provided for CSS"):
-        parse_content('<body><h1>no closing tag<h1>', '.dummy', 'CSS')
+    with pytest.raises(ValueError, match = "Unable to parse the html_content provided."):
+        parse_content('<body><h1>Testing CSS</h1></body>', '--dummy', 'CSS')
 
 def test_parse_zeromatch_xpath():
     """
