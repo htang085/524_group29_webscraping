@@ -21,21 +21,15 @@ def parse_content(html_content, selector, selector_type='css'):
 
     Example:
         # Sample HTML content
-        html_content = '''
-        <html>
-            <body>
-                <div class="item">alfa</div>
-                <div class="item">bravo</div>
-                <div class="item">charlie</div>
-            </body>
-        </html>
-        '''
+        html_content = '<html><body><div class="item">alfa</div><div class="item">bravo</div> <div class="item">charlie</div> </body> </html>'
 
         # Using CSS selector
-        parse_content(html_content, ".item")  # Returns: ['alfa', 'bravo', 'charlie']
+        parse_content(html_content, ".item")  
+        # Returns: [{'value': 'alfa'}, {'value': 'bravo'}, {'value': 'charlie'}]
 
         # Using XPath selector
-        parse_content(html_content, "//div[@class='item']", selector_type='xpath')  # Returns: ['alfa', 'bravo', 'charlie']
+        parse_content(html_content, "//div[@class='item']", selector_type='xpath')  
+        # Returns: [{'value': 'alfa'}, {'value': 'bravo'}, {'value': 'charlie'}]
     """
 
     

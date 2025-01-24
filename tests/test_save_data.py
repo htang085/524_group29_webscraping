@@ -3,11 +3,9 @@
 # date: 2025-01-16
 
 import pytest
-import sys
 import os
 from unittest.mock import patch, mock_open
 
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "../src")))
 from dsci524_group29_webscraping.save_data import save_data
 
 
