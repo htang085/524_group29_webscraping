@@ -2,6 +2,8 @@
 
 [![Documentation Status](https://readthedocs.org/projects/524-group29-webscraping/badge/?version=latest)](https://524-group29-webscraping.readthedocs.io/en/latest/?badge=latest)
 
+[![codecov](https://codecov.io/gh/ttimbers/pycounts_tt_2024/graph/badge.svg?token=0KMZ9OEBGI)](https://codecov.io/gh/ttimbers/pycounts_tt_2024)
+
 A Python package for simplified web scraping functionality for data scientists new to web scraping.
 
 ## Installation
