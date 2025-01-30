@@ -12,7 +12,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: "3.9"
+          python-version: '3.9'
 
       - name: Check-out repository
         uses: actions/checkout@v3
@@ -30,7 +30,7 @@ jobs:
         uses: codecov/codecov-action@v5
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
-          files: ./coverage.xml   # coverage report
+          files: ./coverage.xml # coverage report
 
       - name: Build documentation
         run: poetry run make html --directory docs/
@@ -39,7 +39,7 @@ jobs:
     permissions:
       id-token: write
       contents: write
-    
+
     # Only run this job if the "ci" job passes
     needs: ci
 
@@ -54,7 +54,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: "3.9"
+          python-version: '3.9'
 
       - name: Check-out repository
         uses: actions/checkout@v3
@@ -77,10 +77,10 @@ jobs:
       - name: Test install from TestPyPI
         if: steps.release.outputs.released == 'true'
         run: |
-            pip install \
-            --index-url https://test.pypi.org/simple/ \
-            --extra-index-url https://pypi.org/simple \
-            524_group29_webscraping
+          pip install \
+          --index-url https://test.pypi.org/simple/ \
+          --extra-index-url https://pypi.org/simple \
+          dsci524_group29_webscraping
 
       - name: Publish to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1
