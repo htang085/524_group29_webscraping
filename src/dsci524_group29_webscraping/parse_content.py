@@ -46,9 +46,6 @@ def parse_content(html_content, selector, selector_type='css'):
             elements = doc.cssselect(selector)  # Use CSS selectors
         elif selector_type.lower() == 'xpath':
             elements = doc.xpath(selector)  # Use XPath selectors
-        #else:
-        #    # this should already be checked, but cautionary
-        #    raise ValueError(f"Invalid selector_type '{selector_type}'. Only CSS/XPath selectors are supported.")
 
         # Extract text content and strip whitespace
         extracted_data = [{"value": el.text} for el in elements]
