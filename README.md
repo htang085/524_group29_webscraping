@@ -1,8 +1,8 @@
 # dsci524_group29_webscraping
 
 [![Documentation Status](https://readthedocs.org/projects/524-group29-webscraping/badge/?version=latest)](https://524-group29-webscraping.readthedocs.io/en/latest/?badge=latest)
-
 [![codecov](https://codecov.io/github/UBC-MDS/524_group29_webscraping/graph/badge.svg?token=uJT3IDb3z1)](https://codecov.io/github/UBC-MDS/524_group29_webscraping)
+[![ci-cd](https://github.com/UBC-MDS/524_group29_webscraping/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/UBC-MDS/524_group29_webscraping/actions/workflows/ci-cd.yml)
 
 A Python package for simplified web scraping functionality for data scientists new to web scraping.
 
