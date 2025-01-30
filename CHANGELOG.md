@@ -1,6 +1,14 @@
 # CHANGELOG
 
 
+## v1.1.3 (2025-01-30)
+
+### Bug Fixes
+
+- Rename in command of cicd.yml
+  ([`2b2b069`](https://github.com/UBC-MDS/524_group29_webscraping/commit/2b2b06939e6ea8e213f560b9cafb036756b904ba))
+
+
 ## v1.1.2 (2025-01-30)
 
 
