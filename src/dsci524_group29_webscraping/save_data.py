@@ -42,33 +42,45 @@ def save_data(data, format='csv', destination='output.csv'):
         - If the specified directory in the destination does not exist, a FileNotFoundError will be raised.
     """
     # Validate the destination directory
+    # Check if the directory in the destination path exists
     dir_path = os.path.dirname(destination)
     if dir_path and not os.path.exists(dir_path):
+        # Raise an error if the directory does not exist
         raise FileNotFoundError(f"The directory {dir_path} does not exist.")
 
-    # Save as CSV
+    # Save data in CSV format
     if format == 'csv':
+        # Ensure the input data is a list of dictionaries
         if not isinstance(data, list) or not all(isinstance(item, dict) for item in data):
             raise ValueError("For CSV, data must be a list of dictionaries.")
         try:
+            # Open the destination file in write mode
             with open(destination, mode='w', newline='') as file:
+                # Create a CSV writer object
                 writer = csv.DictWriter(file, fieldnames=data[0].keys())
-                writer.writeheader()
-                writer.writerows(data)
+                writer.writeheader()  # Write the header row
+                writer.writerows(data)  # Write the data rows
         except Exception as e:
+            # Raise an error if CSV saving fails
             raise Exception(f"Failed to save CSV data: {e}")
 
-    # Save as JSON
+    # Save data in JSON format
     elif format == 'json':
+        # Ensure the input data is either a list or a dictionary
         if not isinstance(data, (list, dict)):
             raise ValueError("For JSON, data must be a list or a dictionary.")
         try:
+            # Open the destination file in write mode
             with open(destination, mode='w') as file:
+                # Write the JSON data to the file with indentation for readability
                 json.dump(data, file, indent=4)
         except Exception as e:
+            # Raise an error if JSON saving fails
             raise Exception(f"Failed to save JSON data: {e}")
 
+    # Raise an error if the specified format is unsupported
     else:
         raise ValueError("Unsupported format. Use 'csv' or 'json'.")
 
+    # Return the absolute path to the saved file
     return os.path.abspath(destination)
