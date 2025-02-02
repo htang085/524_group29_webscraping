@@ -6,6 +6,20 @@
 
 A Python package for simplified web scraping functionality for data scientists new to web scraping.
 
+## Create Virtual Environment
+
+Use Python version 3.9 or higher:
+
+```bash
+$ conda create --name webscraping python=3.12 -y
+```
+
+Activate the environment:
+
+```bash
+$ conda activate webscraping
+```
+
 ## Installation
 
 ```bash
