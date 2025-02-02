@@ -6,7 +6,7 @@ import pytest
 import os
 from unittest.mock import patch, mock_open
 
-from dsci524_group29_webscraping.save_data import save_data
+from dsci524_group29_webscraping import save_data
 
 
 def test_save_data_valid_csv(tmp_path):

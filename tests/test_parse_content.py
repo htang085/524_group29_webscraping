@@ -3,7 +3,7 @@
 # date: 2025-01-16
 
 import pytest
-from dsci524_group29_webscraping.parse_content import parse_content
+from dsci524_group29_webscraping import parse_content
 
 def test_parse_simple_xpath():
     """
