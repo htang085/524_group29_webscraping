@@ -8,26 +8,28 @@ import csv
 
 def save_data(data, format='csv', destination='output.csv'):
     """
-    Saves the extracted data into a file in the specified format at the given destination.
+    Saves the extracted data into a file.
 
     Parameters:
         data (list or dict): The data to be saved.
             - For 'csv', it must be a list of dictionaries where each dictionary represents a row.
             - For 'json', it can be either a list or a dictionary.
-        format (str, optional): The file format to save the data. Supported formats are:
-            - 'csv': Saves the data as a CSV file.
-            - 'json': Saves the data as a JSON file.
+        format (str, optional): The format in which to save the data. Options are:
+            - 'csv': Saves the data as a CSV file. Each key in the dictionaries becomes a column header.
+            - 'json': Saves the data as a JSON file. The data is serialized with indentation for readability.
             Default is 'csv'.
-        destination (str, optional): The file path where the data will be saved. 
+        destination (str, optional): The file path to save the data. Can specify:
+            - A file name (e.g., 'output.csv').
+            - A full path (e.g., '/path/to/output.csv').
             Default is 'output.csv'.
 
     Returns:
         str: The absolute path to the saved file.
 
     Raises:
-        ValueError: If the specified format is unsupported or the data structure is incompatible with the format.
+        ValueError: If the format is unsupported or if the data structure is incompatible with the format.
         FileNotFoundError: If the directory specified in the destination path does not exist.
-        Exception: If an unexpected error occurs during the file writing process.
+        Exception: If an unexpected error occurs during the file-writing process.
 
     Examples:
         # Save data as a CSV file
@@ -37,10 +39,10 @@ def save_data(data, format='csv', destination='output.csv'):
         save_data({"name": "Alice", "age": 25}, format='json', destination='data.json')
 
     Notes:
-        - For 'csv', the input data must be a list of dictionaries where each dictionary represents a row in the CSV.
-        - For 'json', the input data can be a dictionary or a list.
-        - If the specified directory in the destination does not exist, a FileNotFoundError will be raised.
+        - The directory specified in the destination path must exist; otherwise, a FileNotFoundError is raised.
+        - For 'csv', the first dictionary in the list determines the column headers.
     """
+    
     # Validate the destination directory
     dir_path = os.path.dirname(destination)
     if dir_path and not os.path.exists(dir_path):

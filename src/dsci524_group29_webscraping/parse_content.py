@@ -9,25 +9,31 @@ def parse_content(html_content, selector, selector_type='css'):
     Parses HTML content to extract data based on the provided selector.
 
     Parameters:
-        html_content (str): The raw HTML content.
-        selector (str): The CSS selector or XPath expression to target elements.
-        selector_type (str): The type of selector ('css' or 'xpath'). Case-insensitive.
+        html_content (str): The raw HTML content to be parsed.
+        selector (str): The query to locate elements in the HTML content.
+            - For CSS selectors: Use `.class`, `#id`, or `tagname`.
+            - For XPath: Use expressions like `//tag[@attribute='value']`.
+        selector_type (str, optional): The type of selector to use. Options:
+            - 'css': Uses a CSS selector (e.g., `.item` selects elements with class "item").
+            - 'xpath': Uses an XPath expression (e.g., `//div[@class='item']` selects <div> elements with class "item").
+            Case-insensitive. Default is 'css'.
 
     Returns:
-        list: A list of extracted data elements.
+        list: A list of dictionaries containing extracted data.
+            - Example output: `[{'value': 'alfa'}, {'value': 'bravo'}, {'value': 'charlie'}]`.
 
     Raises:
-        ValueError: If the selector_type is unsupported or parsing fails.
+        ValueError: If the selector_type is unsupported or an error occurs during parsing.
 
     Example:
         # Sample HTML content
-        html_content = '<html><body><div class="item">alfa</div><div class="item">bravo</div> <div class="item">charlie</div> </body> </html>'
+        html_content = '<html><body><div class="item">alfa</div><div class="item">bravo</div><div class="item">charlie</div></body></html>'
 
-        # Using CSS selector
+        # Using a CSS selector
         parse_content(html_content, ".item")  
         # Returns: [{'value': 'alfa'}, {'value': 'bravo'}, {'value': 'charlie'}]
 
-        # Using XPath selector
+        # Using an XPath selector
         parse_content(html_content, "//div[@class='item']", selector_type='xpath')  
         # Returns: [{'value': 'alfa'}, {'value': 'bravo'}, {'value': 'charlie'}]
     """
