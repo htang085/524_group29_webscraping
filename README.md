@@ -1,4 +1,4 @@
-# dsci524_group29_webscraping
+# Beginner-Friendly Python Toolkit for Web Scraping
 
 [![Documentation Status](https://readthedocs.org/projects/524-group29-webscraping/badge/?version=latest)](https://524-group29-webscraping.readthedocs.io/en/latest/?badge=latest)
 [![codecov](https://codecov.io/github/UBC-MDS/524_group29_webscraping/graph/badge.svg?token=uJT3IDb3z1)](https://codecov.io/github/UBC-MDS/524_group29_webscraping)
