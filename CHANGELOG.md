@@ -1,6 +1,31 @@
 # CHANGELOG
 
 
+## v1.1.4 (2025-02-02)
+
+### Bug Fixes
+
+- Add detailed inline comments to improve code readability
+  ([#80](https://github.com/UBC-MDS/524_group29_webscraping/pull/80),
+  [`31da54d`](https://github.com/UBC-MDS/524_group29_webscraping/commit/31da54d7a91ba5781459cf5fce84a7a10dc0a16b))
+
+- Added usage instructions to README.md
+  ([#69](https://github.com/UBC-MDS/524_group29_webscraping/pull/69),
+  [`48bc468`](https://github.com/UBC-MDS/524_group29_webscraping/commit/48bc46852d8cd9d1dba39d71181f91d74a52701a))
+
+- Refactored save_data.py to improve readability and comments
+  ([#81](https://github.com/UBC-MDS/524_group29_webscraping/pull/81),
+  [`4f6e4b3`](https://github.com/UBC-MDS/524_group29_webscraping/commit/4f6e4b351a1d29c3a1625388caf2964afb2bd7ca))
+
+- Updated authors list in pyproject.toml with all team members
+  ([#75](https://github.com/UBC-MDS/524_group29_webscraping/pull/75),
+  [`36a3637`](https://github.com/UBC-MDS/524_group29_webscraping/commit/36a36377b4b80cee6daf630f0f6acc51bab1f6f5))
+
+- Updated LICENSE to list all authors
+  ([#75](https://github.com/UBC-MDS/524_group29_webscraping/pull/75),
+  [`d7f1515`](https://github.com/UBC-MDS/524_group29_webscraping/commit/d7f1515254f1fa6cabf7583487351d1acda25157))
+
+
 ## v1.1.3 (2025-01-30)
 
 ### Bug Fixes
