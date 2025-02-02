@@ -1,6 +1,15 @@
 # CHANGELOG
 
 
+## v1.1.6 (2025-02-02)
+
+### Bug Fixes
+
+- Updated imports in test_save_data.py and test_parse_content.py to reduce redundancy
+  ([#83](https://github.com/UBC-MDS/524_group29_webscraping/pull/83),
+  [`31af83e`](https://github.com/UBC-MDS/524_group29_webscraping/commit/31af83e2b7cc39f029e7fc8ea08a5787abc3660c))
+
+
 ## v1.1.5 (2025-02-02)
 
 ### Bug Fixes
