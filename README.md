@@ -18,6 +18,43 @@ $ pip install dsci524_group29_webscraping
 - `parse_content(html, selector, selector_type)`: Parses the provided HTML content using CSS selectors or XPath to extract specified data.
 - `save_data(data, format, destination)`: Saves the extracted data into the desired format (e.g., TXT, CSV, JSON) at the specified destination path.
 
+## Usage
+
+Below are examples demonstrating how to use the main functions in this package:
+
+### 1. Fetch HTML Content
+```python
+from dsci524_group29_webscraping import fetch_html
+
+# Fetch the raw HTML content from a webpage
+url = "https://example.com"
+html_content = fetch_html(url)
+print(html_content)  # Outputs the HTML content of the page
+```
+
+### 2. Parse Content
+```python
+from dsci524_group29_webscraping import parse_content
+
+# Parse the HTML content to extract specific elements
+selector = "h1"  # Example: extract all <h1> elements
+selector_type = "css"  # Use CSS selectors
+extracted_data = parse_content(html_content, selector, selector_type)
+print(extracted_data)  # Outputs a list of the extracted data
+```
+
+### 3. Save Data
+```python
+from dsci524_group29_webscraping import save_data
+
+# Save the extracted data to a CSV file
+data = [{"name": "Alice", "age": 25}, {"name": "Bob", "age": 30}]  # Example data
+file_path = save_data(data, format="csv", destination="output.csv")
+print(f"Data saved to: {file_path}")
+```
+
+This package simplifies the process of fetching, parsing, and saving web data, making it ideal for beginners.
+
 ## Python Ecosystem
 
 While libraries like [`BeautifulSoup`](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) 
@@ -34,7 +71,6 @@ it accessible for quick tasks and educational purposes.
 
 *dsci524_group29_webscraping* differentiates itself by offering a simple set of functions 
 that do the job for simple, beginner level needs.
-
 
 ## Contributors
 
