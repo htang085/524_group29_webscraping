@@ -1,6 +1,19 @@
 # CHANGELOG
 
 
+## v1.1.5 (2025-02-02)
+
+### Bug Fixes
+
+- Updated imports in test_fetch_html.py to reduce redundancy
+  ([#83](https://github.com/UBC-MDS/524_group29_webscraping/pull/83),
+  [`0314486`](https://github.com/UBC-MDS/524_group29_webscraping/commit/0314486684927b455a3ccc1f331f727538fa231f))
+
+- Updated README title to reflect feedback for better package clarity
+  ([#66](https://github.com/UBC-MDS/524_group29_webscraping/pull/66),
+  [`5939090`](https://github.com/UBC-MDS/524_group29_webscraping/commit/5939090cf14468a6753c1b58b657674af09a2f85))
+
+
 ## v1.1.4 (2025-02-02)
 
 ### Bug Fixes
