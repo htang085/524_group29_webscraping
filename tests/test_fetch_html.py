@@ -2,7 +2,7 @@
 # author: Lixuan Lin
 # date: 2025-01-16
 
-from dsci524_group29_webscraping.fetch_html import fetch_html
+from dsci524_group29_webscraping import fetch_html
 import unittest
 from unittest.mock import patch, Mock
 import requests
