@@ -40,7 +40,7 @@ The package has three functions that you can use in a typical web scraping workf
 
 ## Usage
 
-The examples below demonstrate how to use the main functions in this package. The examples fetch content from then [IANA Example Domain](https://example.com):
+The examples below demonstrate how to use the main functions in this package. The examples fetch content from the [IANA Example Domain](https://example.com):
 
 ### 1. Fetch HTML Content
 ```python
