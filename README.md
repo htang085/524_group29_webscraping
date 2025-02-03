@@ -8,33 +8,39 @@ A Python package for simplified web scraping functionality for data scientists n
 
 ## Create Virtual Environment
 
-Use Python version 3.9 or higher:
+We recommend that you first create a new `conda` environment with the latest version of Python (if not, then version 3.9 or higher). You can do so with the command below:
 
 ```bash
-$ conda create --name webscraping python=3.12 -y
+conda create --name webscraping python=3.12 -y
 ```
 
-Activate the environment:
+After the environment is created, activate the environment:
 
 ```bash
-$ conda activate webscraping
+conda activate webscraping
 ```
 
 ## Installation
 
+You can then install the package in your environment using the command:
+
 ```bash
-$ pip install dsci524_group29_webscraping
+pip install dsci524_group29_webscraping
 ```
+
+After installation, have fun scraping the web!
 
 ## Functions
 
-- `fetch_html(url)`: Retrieves the raw HTML content from the specified URL, handling HTTP requests and potential errors.
-- `parse_content(html, selector, selector_type)`: Parses the provided HTML content using CSS selectors or XPath to extract specified data.
+The package has three functions that you can use in a typical web scraping workflow as follows:
+
+- `fetch_html(url)`: Retrieves the raw HTML content from the specified URL, handling HTTP requests and potential errors. You can capture the results in a `string` variable to use later in your pipeline.
+- `parse_content(html, selector, selector_type)`: Parses the provided HTML content using CSS selectors or XPath to extract specified data. The `html` parameter is a `string` value retrieved using `fetch_html(url)`. This function returns a list of values that you can use in the final part of your pipeline.
 - `save_data(data, format, destination)`: Saves the extracted data into the desired format (e.g., TXT, CSV, JSON) at the specified destination path.
 
 ## Usage
 
-Below are examples demonstrating how to use the main functions in this package:
+The examples below demonstrate how to use the main functions in this package. The examples fetch content from then [IANA Example Domain](https://example.com):
 
 ### 1. Fetch HTML Content
 ```python
@@ -51,7 +57,7 @@ print(html_content)  # Outputs the HTML content of the page
 from dsci524_group29_webscraping import parse_content
 
 # Parse the HTML content to extract specific elements
-selector = "h1"  # Example: extract all <h1> elements
+selector = "h1"  # Example: extract all <h1> header elements
 selector_type = "css"  # Use CSS selectors
 extracted_data = parse_content(html_content, selector, selector_type)
 print(extracted_data)  # Outputs a list of the extracted data
@@ -62,12 +68,13 @@ print(extracted_data)  # Outputs a list of the extracted data
 from dsci524_group29_webscraping import save_data
 
 # Save the extracted data to a CSV file
-data = [{"name": "Alice", "age": 25}, {"name": "Bob", "age": 30}]  # Example data
+data = [{'value': 'Example Domain'}]  # Example data
 file_path = save_data(data, format="csv", destination="output.csv")
 print(f"Data saved to: {file_path}")
 ```
 
 This package simplifies the process of fetching, parsing, and saving web data, making it ideal for beginners.
+Usage is simplified by following the three simple steps above.
 
 ## Python Ecosystem
 
