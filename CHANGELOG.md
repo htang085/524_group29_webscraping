@@ -1,6 +1,20 @@
 # CHANGELOG
 
 
+## v1.1.7 (2025-02-03)
+
+### Bug Fixes
+
+- Feedback addressed by Sienko
+  ([`c2e16ec`](https://github.com/UBC-MDS/524_group29_webscraping/commit/c2e16ec8713cd921cb754cc097aaf4c49fced8c7))
+
+### Documentation
+
+- Improved parse_content docstring for clarity and completeness
+  ([#82](https://github.com/UBC-MDS/524_group29_webscraping/pull/82),
+  [`f9119bc`](https://github.com/UBC-MDS/524_group29_webscraping/commit/f9119bc88b98c23240e612bcd694513a15803ff4))
+
+
 ## v1.1.6 (2025-02-02)
 
 ### Bug Fixes
