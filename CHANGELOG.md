@@ -1,6 +1,14 @@
 # CHANGELOG
 
 
+## v1.1.8 (2025-02-03)
+
+### Bug Fixes
+
+- Fixed typo in README file
+  ([`6c1c17c`](https://github.com/UBC-MDS/524_group29_webscraping/commit/6c1c17c84b9b6bd5272b1cb88bbb19cb34514e01))
+
+
 ## v1.1.7 (2025-02-03)
 
 ### Bug Fixes
